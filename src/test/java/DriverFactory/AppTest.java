@@ -1,5 +1,14 @@
 package DriverFactory;
 
-public class AppTest {
+import org.testng.annotations.Test;
 
+public class AppTest 
+{
+	@Test
+	public void KickStart() throws  Throwable
+	{
+		DriverScript ds = new DriverScript();
+		ds.startTest();
+	}
+	
 }

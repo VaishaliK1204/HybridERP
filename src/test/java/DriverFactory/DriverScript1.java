@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import CommonFunctions.FunctionLibrary;
 import utilities.ExcelFileUtil;
 
-public class DriverScript 
+public class DriverScript1 
 {
 		WebDriver driver;
 		String inputpath ="./FileInput/Controller.xlsx";

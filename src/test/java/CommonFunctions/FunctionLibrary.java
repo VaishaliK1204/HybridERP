@@ -26,7 +26,7 @@ public class FunctionLibrary
 	public static WebDriver startBrowser() throws Throwable
 	{
 		conpro = new Properties();
-		conpro.load(new FileInputStream("PropertyFiles/Environment.properties"));
+		conpro.load(new FileInputStream("D:\\Live_project\\Hybrid_Framework1\\PropertyFiles\\Environment.properties"));
 		if(conpro.getProperty("browser").equalsIgnoreCase("chrome"))
 		{
 			driver = new ChromeDriver();
@@ -91,18 +91,21 @@ public class FunctionLibrary
 	}
 
 	//method for button,checkbox,radiobuttons
-	public static void clickAction(String locatorType , String LocatorValue)
+	public static void clickAction(String locatorType , String LocatorValue) throws Throwable
 	{
 		if(locatorType.equalsIgnoreCase("xpath"))
 		{
+			Thread.sleep(2000);
 			driver.findElement(By.xpath(LocatorValue)).click();
 		}
 		if(locatorType.equalsIgnoreCase("name"))
 		{
+			Thread.sleep(2000);
 			driver.findElement(By.name(LocatorValue)).click();
 		}
 		if(locatorType.equalsIgnoreCase("id"))
 		{
+			Thread.sleep(2000);
 			driver.findElement(By.id(LocatorValue)).sendKeys(Keys.ENTER);
 		}
 	}
