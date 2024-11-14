@@ -26,7 +26,7 @@ public class ExcelFileUtil
 		 //method for writing the counting no of row in sheet
 	   public int rowCount(String sheetName)
 		 {
-			 return wb.getSheet(sheetName).getLastRowNum(); 
+			  return wb.getSheet(sheetName).getLastRowNum();
 		 }
 	   
 	   public String  getCellData(String sheetName, int  row, int column) 
