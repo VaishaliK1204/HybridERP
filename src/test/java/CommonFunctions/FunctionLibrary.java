@@ -7,7 +7,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
@@ -31,7 +34,7 @@ public class FunctionLibrary
 	public static WebDriver startBrowser() throws Throwable
 	{
 		conpro = new Properties();
-		conpro.load(new FileInputStream("./PropertyFiles/Environment.properties"));
+		conpro.load(new FileInputStream("PropertyFiles\\Environment.properties"));
 		if(conpro.getProperty("browser").equalsIgnoreCase("chrome"))
 		{
 			driver = new ChromeDriver();
@@ -121,7 +124,7 @@ public class FunctionLibrary
 		String Actual_Title =  driver.getTitle();
 		try
 		{
-			Assert.assertEquals(Actual_Title, Expected_Title,"Title is not matching");
+			Assert.assertEquals(Actual_Title, Expected_Title,"  g");
 		}catch (AssertionError a)
 		{
 			System.out.println(a.getMessage());
@@ -315,6 +318,18 @@ public class FunctionLibrary
 		{
 			System.out.println(a.getMessage());
 		}
+	}
+	
+	// method ofr generating data using java time stamp 
+	
+	public static String generateDate()
+	{
+		//create new data
+		Date  dt =  new Date();
+		// create date format
+		DateFormat df = new SimpleDateFormat("YYYY_MM_dd");
+		return df.format(dt);
+		
 	}
 }
 
